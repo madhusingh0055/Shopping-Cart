@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@200&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@200&family=Rubik+Moonrocks&display=swap');
+
+.App{
+  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.app-name{
+  font-family: 'Lato', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Rubik Moonrocks', cursive;
+font-size: xx-large;
+color: rgb(243, 86, 248);
+text-align: center;
+}

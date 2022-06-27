@@ -1,0 +1,13 @@
+.color-nav{
+    background: rgb(121,209,117);
+background: linear-gradient(90deg, rgba(121,209,117,1) 0%, rgba(68,236,226,1) 47%, rgba(103,191,208,1) 100%);
+
+}
+
+.me-auto{
+    color: white;
+}
+
+.pagination{
+    margin-top: 50%;
+}

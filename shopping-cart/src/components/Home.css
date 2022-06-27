@@ -1,0 +1,12 @@
+.input{
+    width: 50%;
+    margin-left: 30%;
+}
+
+.pagination{
+   border-radius: 5px;
+   background-color: white;
+   width: 20%;
+   height: 10%;
+   margin-left: 30%;
+}

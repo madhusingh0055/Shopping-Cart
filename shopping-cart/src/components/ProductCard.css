@@ -1,0 +1,49 @@
+.card-list{
+   float: left;
+   padding: 1.5rem;
+   
+}
+
+.header{
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Lato', sans-serif;
+	
+}
+
+
+.card-img {
+    height: 10rem;
+}
+
+.card{
+    background: #334d50;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #cbcaa5, #c4d3d4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #cbcaa5, #eff6f7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: relative;
+	transition: transform 0.2s;
+  
+}
+
+.card:hover {
+	cursor: pointer;
+	transform: scale(1.2);
+}
+
+.card:hover .overlay {
+	opacity: 1;
+}
+
+.overlay {
+	position: absolute;
+	background: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	transition: 0.5s ease;
+	opacity: 0;
+	bottom: 0;
+	font-size: 20px;
+	padding: 20px;
+	text-align: center;
+}
