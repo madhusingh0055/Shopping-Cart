@@ -1,27 +1,28 @@
-import React from 'react'
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import Container from 'react-bootstrap/Container';
-
+import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
+import  {connect} from  'react-redux'
 import './Header.css'
 
-const Header = () => {
-  return (
-    <>
-  <Navbar variant="light" className='color-nav'>
-    <Container>
-    <Navbar.Brand href="#home">Shooping Cart</Navbar.Brand>
-    <Nav className="auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
-    </Nav>
-    </Container>
-  </Navbar>
- 
- 
-</>
-  )
-}
 
-export default Header;
+export class Header extends Component {
+    render() {
+        return (
+            <div className="row" id="nav">
+              <div className="col-md-12">
+                  <nav className="navbar  navbar-dark bg-dark ">
+                        <ul className="nav">
+                            <li className="nav-item" ><Link to="/" className="nav-link active">Products</Link></li>
+                            <li className="nav-item"><Link to="/carts" className="nav-link">Carts : {this.props.numberCart}</Link></li>
+                        </ul>
+                  </nav>
+              </div>
+            </div>
+        )
+    }
+}
+const mapStateToProps = state =>{
+    return{
+        numberCart:state._todoProduct.numberCart
+    }
+}
+export default connect(mapStateToProps,null)(Header)

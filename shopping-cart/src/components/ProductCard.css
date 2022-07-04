@@ -13,9 +13,14 @@
 	
 }
 
+.row{
+    padding: 5px 5px;
+}
+
 
 .card-img {
     height: 10rem;
+	width: 15rem;
 }
 
 .card{
@@ -23,7 +28,8 @@
     background: -webkit-linear-gradient(to right, #cbcaa5, #c4d3d4);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #cbcaa5, #eff6f7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     position: relative;
-	transition: transform 0.2s;
+	transition: transform 0.5s;
+	padding: 10px 10px;
   
 }
 

@@ -6,6 +6,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
 import Pagination from '@mui/material/Pagination';
 import './Home.css'
+import { connect } from 'react-redux';
 
 
 
@@ -36,7 +37,7 @@ const Home = () => {
 
 
   async function getProducts() {
-    setProductList(Products);
+    setProductList(props``);
     setPages(Math.ceil((Products.length)/perpage))
   }
   // console.log(productList)
@@ -138,4 +139,9 @@ const Home = () => {
 }
 
 
-export default Home
+const mapStateToProps = (state)=>{
+  return {
+      items: state.items
+       }
+  }
+  export default connect(mapStateToProps)(Home)

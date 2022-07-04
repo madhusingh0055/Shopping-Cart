@@ -1,22 +1,19 @@
-
-import './App.css';
-
+import React from 'react';
+import {BrowserRouter as Router,Link, Route,Switch} from 'react-router-dom'
+import Cart from './components/Cart';
 import Header from './components/Header';
-import Home from './components/Home';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import ProductCard from './components/ProductCard';
-
+import Product from './components/Product';
 function App() {
   return (
-    <div className="App">
-     <Header />
-     <br />
-     {/* <ProductCard /> */}
-     <br />
-     <Home />
-   
-   
-    </div>
+     <Router>
+        <div className="container">
+            <Header />
+            <Switch>
+               <Route path="/" exact component={Product} />
+               <Route path="/carts" exact component={Cart} />
+            </Switch>
+        </div>
+     </Router>
   );
 }
 
