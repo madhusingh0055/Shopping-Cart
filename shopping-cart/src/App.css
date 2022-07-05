@@ -5,5 +5,7 @@
 .App{
   font-family: 'Lato', sans-serif;
   font-family: 'Montserrat', sans-serif;
+  background: rgb(166,175,166);
+background: linear-gradient(90deg, rgba(166,175,166,1) 0%, rgba(150,139,139,1) 47%, rgba(33,35,36,1) 100%);
 }
 

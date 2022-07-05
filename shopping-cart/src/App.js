@@ -3,6 +3,7 @@ import {BrowserRouter as Router,Link, Route,Switch} from 'react-router-dom'
 import Cart from './components/Cart';
 import Header from './components/Header';
 import Product from './components/Product';
+import './App.css'
 function App() {
   return (
      <Router>

@@ -40,7 +40,7 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
                             <tr key={key}>    
                             <td><i className="badge badge-danger" onClick={()=>DeleteCart(key)}>X</i></td>
                             <td>{item.title}</td>
-                            <td><img src={item.thumbnail} /></td>
+                            <td><img src={item.thumbnail} style={{width:'100px',height:'80px'}}/></td>
                             <td>{item.price} $</td>
                             <td>
                                     <span className="btn btn-primary"  onClick={()=>DecreaseQuantity(key)}>-</span>
