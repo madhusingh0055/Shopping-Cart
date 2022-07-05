@@ -11,8 +11,8 @@ export class Header extends Component {
             
              
                         <ul >
-                            <li  ><Link to="/" className="nav-link active">Products</Link></li>
-                            <li className='cart'><Link to="/carts" className="nav-link">Carts : {this.props.numberCart}</Link></li>
+                            <li  ><Link to="/" className="nav-link active" style={{ color: 'inherit', textDecoration: 'inherit'}}>Shopping Cart</Link></li>
+                            <li className='cart'><Link to="/carts" className="nav-link" style={{ color: 'inherit', textDecoration: 'inherit'}}><i class="fa fa-shopping-cart" aria-hidden="true" style={{fontSize: "30px"}}></i><sup>{this.props.numberCart}</sup></Link></li>
                         </ul>
                   
             

@@ -1,27 +1,27 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
-import {IncreaseQuantity,DecreaseQuantity,DeleteCart} from '../actions';
-import Products from './Products';
+import { IncreaseQuantity, DecreaseQuantity, DeleteCart } from '../actions';
+import './Cart.css'
 
-function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
-//    console.log(items)
+function Cart({ items, IncreaseQuantity, DecreaseQuantity, DeleteCart }) {
+    //    console.log(items)
     let ListCart = [];
-    let TotalCart=0;
+    let TotalCart = 0;
     ListCart.push(items.Carts)
-    Object.keys(items.Carts).forEach(function(item){
-        TotalCart+=items.Carts[item].quantity * items.Carts[item].price;
+    Object.keys(items.Carts).forEach(function (item) {
+        TotalCart += items.Carts[item].quantity * items.Carts[item].price;
         ListCart.push(items.Carts[item]);
     });
-    function TotalPrice(price,tonggia){
+    function TotalPrice(price, tonggia) {
         return Number(price * tonggia).toLocaleString('en-US');
     }
 
     console.log(ListCart);
     ListCart.shift()// It remove first element from array
-    
-    return(
-        <div className="row">
-            <div className="col-md-12">
+
+    return (
+
+        <div className='table-cart'>
             <table className="table">
                 <thead>
                     <tr>
@@ -34,41 +34,44 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
                     </tr>
                 </thead>
                 <tbody>
-                {ListCart.length>0 &&
-                    ListCart.map((item,key)=>{
-                        return(
-                            <tr key={key}>    
-                            <td><i className="badge badge-danger" onClick={()=>DeleteCart(key)}>X</i></td>
-                            <td>{item.title}</td>
-                            <td><img src={item.thumbnail} style={{width:'100px',height:'80px'}}/></td>
-                            <td>{item.price} $</td>
-                            <td>
-                                    <span className="btn btn-primary"  onClick={()=>DecreaseQuantity(key)}>-</span>
-                                    <span className="btn btn-info">{item.quantity}</span>
-                                    <span className="btn btn-primary"  onClick={()=>IncreaseQuantity(key)}>+</span>
-                            </td>
-                            <td>{ TotalPrice(item.price,item.quantity)} $</td>
-                        </tr>
-                        )
-                    })
-                        
-                }
-                <tr>
-                    <td colSpan="5">Total Carts</td>
-                    <td>{Number(TotalCart).toLocaleString('en-US')} $</td>
-                </tr>
+                    {ListCart.length > 0 &&
+                        ListCart.map((item, key) => {
+                            return (
+
+                                <tr key={key}>
+
+                                    <td><i className="btn-cart" onClick={() => DeleteCart(key)}>Delete</i></td>
+                                    <td>{item.title}</td>
+                                    <td><img src={item.thumbnail} className='addtocart-img' /></td>
+                                    <td>{item.price} $</td>
+                                    <td>
+                                        <span className="cart-btn" onClick={() => DecreaseQuantity(key)}>-</span>
+                                        <span className="cart-btn">{item.quantity}</span>
+                                        <span className="cart-btn" onClick={() => IncreaseQuantity(key)}>+</span>
+                                    </td>
+                                    <td>{TotalPrice(item.price, item.quantity)} $</td>
+                                </tr>
+
+                            )
+                        })
+
+                    }
+                    <tr>
+                        <td colSpan="5">Total Carts</td>
+                        <td>{Number(TotalCart).toLocaleString('en-US')} $</td>
+                    </tr>
                 </tbody>
-              
+
             </table>
-            </div>
         </div>
+
     )
 }
-const mapStateToProps = state =>{
-  //  console.log(state)
-    return{
-        items:state._todoProduct
+const mapStateToProps = state => {
+    //  console.log(state)
+    return {
+        items: state._todoProduct
     }
 }
 
-export default connect(mapStateToProps,{IncreaseQuantity,DecreaseQuantity,DeleteCart})(Cart)
+export default connect(mapStateToProps, { IncreaseQuantity, DecreaseQuantity, DeleteCart })(Cart)
